@@ -10,6 +10,10 @@ body {
   background-color: #ffffff;
 }
 
+/* body.info_active {
+  overflow: hidden; モーダルが開かれた場合
+} */
+
 
 html{
   scroll-behavior: smooth;
@@ -38,8 +42,7 @@ html{
   border-radius: 50%;
   top: 3%;
   right: 5%;
-  z-index: 999;
-  border-radius: 50%
+  z-index: 997;
 }
 
 .btn.color {
@@ -126,7 +129,7 @@ html{
   position: fixed;
   top: 0;
   left: 0; /* メニューを画面の外に飛ばす */
-  z-index: 998;
+  z-index: 996;
   background: #000000;
   transition: .5s;
   opacity: 0;
@@ -378,6 +381,190 @@ html{
 .icon_instagram{
   width: 30px;
 }
+
+/* ========= モーダル表示のためのCSS ===============
+
+infoエリアをはじめは非表示
+#info{
+  display: none;
+}
+
+モーダルの横幅を変更したい場合
+.modaal-container{
+    max-width: 600px;
+}
+
+モーダルのボタンの色を変更したい場合
+.modaal-close:after,
+.modaal-close:before{
+  background:#ccc;
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+  background:#666;
+} */
+
+
+#modal_bg{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: .5s;
+}
+
+#modal_bg.info_active{
+  opacity: 1;
+  pointer-events: auto;
+  visibility: inherit;
+}
+
+#modal_bg.info_none{
+
+  display: none;
+}
+
+
+
+#modal_container{
+  width: 270px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  padding: 20px;
+  z-index: 999;
+  text-align: center;
+  align-content: center;
+  border: 5px solid #e398c4;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  visibility: hidden;
+  transition: .5s;
+}
+
+#modal_container.info_active{
+  opacity: 1;
+  pointer-events: auto;
+  visibility: inherit;
+}
+
+#modal_container.info_none{
+  display: none;
+}
+
+#modal_container h2{
+  font-size: 30px;
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+
+#modal_container h2 div{
+  font-size: 26px;
+}
+
+#modal_container p{
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#modal_container .info_text{
+  margin-bottom: 40px;
+}
+
+.modal_open{
+  padding: 10px 50px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: #e398c4;
+  color: #fff;
+  width: 200px;
+  margin: 0 auto;
+}
+
+
+#modal_container .modal_link{
+  padding: 10px 50px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: #e398c4;
+  color: #fff;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.modal_close{
+  position: absolute;
+  top: -25px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  /* border: solid 1px #e398c4; */
+  border-radius: 50%;
+  background-color: #e398c4;
+  cursor: pointer;
+}
+
+.modal_close i{
+  position: absolute;
+  top: 19px;
+  left: 10px;
+  height: 2px;
+  width: 20px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.modal_close i:nth-of-type(1){
+  transform: rotate(45deg);
+}
+
+.modal_close i:nth-of-type(2){
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+/*
+#test_box{
+  opacity: 0;
+}
+
+
+#test_box.add_box{
+  width: 40px;
+  height: 40px;
+  background-color: aqua;
+  margin: 50px auto;
+  opacity: 1;
+} */
+
+
+
+
+
+
+
+
+
+
 
 
  /*=========================================================================
