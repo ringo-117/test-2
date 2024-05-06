@@ -25,7 +25,7 @@ $(function () {
 		$("body").css({ height: "100%", overflow: "hidden" });
 	  }
 	});
-  });
+});
 
 
   // メニューカラー変更
@@ -58,30 +58,31 @@ function fadeAnime(){
 
 	//ふわっと動くきっかけのクラス名と動きのクラス名の設定
 	$('.fadeUpTrigger').each(function(){ //fadeInUpTriggerというクラス名が
-	　　var elemPos = $(this).offset().top-50; //要素より、50px上の
-	　　var scroll = $(window).scrollTop();
-	　　var windowHeight = $(window).height();
-	　　if (scroll >= elemPos - windowHeight){
-	　　$(this).addClass('fadeUp');
-	　　// 画面内に入ったらfadeInというクラス名を追記
-	　　}else{
-	　　　$(this).removeClass('fadeUp');
-	　　// 画面外に出たらfadeInというクラス名を外す
-	　　}
-	　　});
+		var elemPos = $(this).offset().top-50; //要素より、50px上の
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if (scroll >= elemPos - windowHeight){
+		$(this).addClass('fadeUp');
+		// 画面内に入ったらfadeInというクラス名を追記
+		}else{
+		$(this).removeClass('fadeUp');
+		// 画面外に出たらfadeInというクラス名を外す
+		$(this).removeClass('fadeUp');
+		}
+	});
 	//関数でまとめることでこの後に違う動きを追加することが出来ます
 	$('.fadeDownTrigger').each(function(){ //fadeInDownTriggerというクラス名が
-	　　var elemPos = $(this).offset().top-50; //要素より、50px上の
-	　　var scroll = $(window).scrollTop();
-	　　var windowHeight = $(window).height();
-	　　if (scroll >= elemPos - windowHeight){
-	　　$(this).addClass('fadeDown');
-	　　// 画面内に入ったらfadeDownというクラス名を追記
-	　　}else{
-	　　　$(this).removeClass('fadeDown');
-	　　// 画面外に出たらfadeDownというクラス名を外す
-	　　}
-	　　});
+		var elemPos = $(this).offset().top-50; //要素より、50px上の
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if (scroll >= elemPos - windowHeight){
+		$(this).addClass('fadeDown');
+		// 画面内に入ったらfadeDownというクラス名を追記
+		}else{
+		$(this).removeClass('fadeDown');
+		// 画面外に出たらfadeDownというクラス名を外す
+		}
+	});
 
 	}//ここまでふわっと動くきっかけのクラス名と動きのクラス名の設定
 
@@ -148,65 +149,26 @@ $(window).on('load scroll', function(){
 		if (500 < scrollY){
 			modalBg.classList.add('info_active');
 			container.classList.add('info_active');
-			// document.body.classList.add('info_active');
+			body.classList.add('info_active');
 		}else{
 			modalBg.classList.remove('info_active');
 			container.classList.remove('info_active');
-			// $('body').css('overflow', 'auto');
 		}
 
-
-
 	});
-	// , {once: true}
+
 	close.addEventListener('click', () => {
 		modalBg.classList.add('info_none');
 		container.classList.add('info_none');
-		// $('body').css('overflow', 'auto');
+		body.classList.add('info_none');
 
 	});
 
 	modalBg.addEventListener('click', () => {
 		modalBg.classList.add('info_none');
 		container.classList.add('info_none');
-		// $('body').css('overflow', 'auto');
+		body.classList.add('info_none');
 	});
-
-
-	$(window).on('load scroll', function(){
-		if($(this).scrollTop() == 500) {
-			$('.scroll').addClass('info_active');
-		}else{
-			$('.scroll').removeClass('info_active');
-		}
-	});
-
-
-	// close.addEventListener('click', () => {
-	// 	modalBg.classList.remove('info_active');
-	// 	container.classList.remove('info_active');
-
-	// });
-
-	// modalBg.addEventListener('click', () => {
-	// 	modalBg.classList.remove('info_active');
-	// 	container.classList.remove('info_active');
-	// });
 
 }
-
-
-$(function () {
-	// ハンバーガーメニューボタンがクリックされたときのイベントハンドラを設定
-	$(".container").scroll (function () {
-	  // 現在のbodyタグのoverflowスタイルを確認
-	  if ($("body").css("overflow") === "hidden") {
-		// もしoverflowがhiddenなら、bodyのスタイルを元に戻す
-		$("body").css({ height: "", overflow: "" });
-	  } else {
-		// そうでなければ、bodyにheight: 100%とoverflow: hiddenを設定し、スクロールを無効にする
-		$("body").css({ height: "100%", overflow: "hidden" });
-	  }
-	});
-  });
 

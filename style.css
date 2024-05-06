@@ -10,9 +10,13 @@ body {
   background-color: #ffffff;
 }
 
-/* body.info_active {
-  overflow: hidden; モーダルが開かれた場合
-} */
+body.info_active {
+  overflow: hidden;/*  モーダルが開かれた場合 */
+}
+
+body.info_none {
+  overflow: auto;/*  モーダルが閉じた場合 */
+}
 
 
 html{
@@ -198,7 +202,7 @@ html{
 	left: 0;
 	height: 100%;
 	width: 100%;
-	z-index: 999;
+	z-index: 1000;
 }
 
 .logo_fadein figure{
@@ -382,30 +386,11 @@ html{
   width: 30px;
 }
 
-/* ========= モーダル表示のためのCSS ===============
+/* ========= モーダル表示のためのCSS =============== */
 
-infoエリアをはじめは非表示
-#info{
-  display: none;
-}
 
-モーダルの横幅を変更したい場合
-.modaal-container{
-    max-width: 600px;
-}
 
-モーダルのボタンの色を変更したい場合
-.modaal-close:after,
-.modaal-close:before{
-  background:#ccc;
-}
 
-.modaal-close:focus:after,
-.modaal-close:focus:before,
-.modaal-close:hover:after,
-.modaal-close:hover:before{
-  background:#666;
-} */
 
 
 #modal_bg{
@@ -426,6 +411,7 @@ infoエリアをはじめは非表示
   opacity: 1;
   pointer-events: auto;
   visibility: inherit;
+  overflow: hidden;
 }
 
 #modal_bg.info_none{
@@ -537,33 +523,6 @@ infoエリアをはじめは非表示
 .modal_close i:nth-of-type(2){
   transform: rotate(-45deg);
 }
-
-
-
-
-
-/*
-#test_box{
-  opacity: 0;
-}
-
-
-#test_box.add_box{
-  width: 40px;
-  height: 40px;
-  background-color: aqua;
-  margin: 50px auto;
-  opacity: 1;
-} */
-
-
-
-
-
-
-
-
-
 
 
 
